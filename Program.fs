@@ -6,7 +6,7 @@ let from whom =
 
 [<EntryPoint>]
 let main argv =
-    let message = from "F#" // Call the function
+    let message = from "F#" // Вызов функции
     printfn "Hello world %s" message
     MyFuncs.squares
-    0 // return an integer exit code
+    0 // возврат кода завершения
