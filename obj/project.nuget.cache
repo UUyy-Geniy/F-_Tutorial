@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "iwDjQFympmuUqLhKws0v9uUPw88PNfLjy8MHHdnf1FxoQlXtJsGdXldq94C89KI9WfE8gVihOq6epdeK5Nt+UQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jeka\\Desktop\\7sem\\prog_langs\\FirstIonideProject~\\FirstIonideProject~.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jeka\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

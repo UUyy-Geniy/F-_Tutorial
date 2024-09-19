@@ -1,0 +1,65 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Jeka\\Desktop\\7sem\\prog_langs\\FirstIonideProject~\\FirstIonideProject~.fsproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Jeka\\Desktop\\7sem\\prog_langs\\FirstIonideProject~\\FirstIonideProject~.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jeka\\Desktop\\7sem\\prog_langs\\FirstIonideProject~\\FirstIonideProject~.fsproj",
+        "projectName": "FirstIonideProject~",
+        "projectPath": "C:\\Users\\Jeka\\Desktop\\7sem\\prog_langs\\FirstIonideProject~\\FirstIonideProject~.fsproj",
+        "packagesPath": "C:\\Users\\Jeka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jeka\\Desktop\\7sem\\prog_langs\\FirstIonideProject~\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jeka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
