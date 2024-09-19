@@ -44,3 +44,22 @@ let findElement (arr: int[]) (value: int) =
 
 findElement [| 1; 2; 3 |] 2  // Найдет элемент
 findElement [| 1; 2; 3 |] 5  // Элемента нет
+
+
+// About printfn
+
+let name = "Tom"
+let age = 37
+let height = 1.68
+ 
+printfn "name: %s  age: %d  height: %f" name age height
+printfn $"name: {name}  age: {age}  height: {height}"
+
+let user = $"User name: {name}  User age: {age}"
+ 
+printfn $"{user}"
+
+// ** unit
+
+let undefined: unit = ()
+let not = ()
