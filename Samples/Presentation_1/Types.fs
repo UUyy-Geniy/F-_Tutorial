@@ -31,7 +31,8 @@ let area shape =
     | Circle radius -> System.Math.PI * radius * radius
     | Rectangle (width, height) -> width * height
     
-printfn "Area of shape1: %f" (area shape1)
+printfn "Area of circle: %f" (area shape1)
+printfn "Area of rectangle: %f" (area shape2)
 
 
 

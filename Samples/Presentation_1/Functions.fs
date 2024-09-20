@@ -2,6 +2,7 @@ let printMessage() = printfn "Hello world" // определение функц�
 printMessage()      // вызов функции
 printMessage()
 printMessage()
+printMessage "" // Error
 
 //  Upgraded First Func
 
@@ -30,7 +31,7 @@ sum 10 2
 sum 5 4
 sum 31 4
 
-// 
+// Автоматическая генерализация.
 
 let printMessage message = printfn $"Message: {message}"           
  
