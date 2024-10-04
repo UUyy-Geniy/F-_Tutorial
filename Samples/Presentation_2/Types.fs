@@ -109,3 +109,30 @@ printfn $"name: {name}  age: {age}  height: {height}"
 let user = $"User name: {name}  User age: {age}"
  
 printfn $"{user}"
+
+
+// Вывод типов.
+
+let printList (lst: 'T list) = 
+    lst |> List.iter (fun x -> printfn "%A" x)
+
+printList [1; 2; 3]
+printList ["a"; "b"; "c"]
+
+let a = 10
+let b = float a  // Преобразование int в float
+
+let strValue = "123"
+let intValue = int strValue  // Преобразование строки в int
+
+
+// Преобразование кортежей
+let tuple1 = (1, "text")
+let tuple2 = (fst tuple1, snd tuple1 + " addition")
+
+// Преобразование записей
+type OldPerson = { Name: string; Age: int }
+type NewPerson = { FullName: string; Age: int }
+
+let convertToNewPerson (p: OldPerson) = 
+    { FullName = p.Name; Age = p.Age }
