@@ -60,7 +60,7 @@ findElement [| 1; 2; 3 |] 5  // Элемента нет
 
 // Classes
 type Counter(initialValue: int) =
-    let mutable count = initialValue
+    val mutable count = initialValue
 
     member this.Increment() =
         count <- count + 1
@@ -68,7 +68,7 @@ type Counter(initialValue: int) =
     member this.GetCount() = count
 
 let counter = Counter(10)
-counter.Increment()
+counter.Increment 1
 printfn "Count: %d" (counter.GetCount())
 
 // Way for Interfaces
@@ -83,6 +83,15 @@ type Circle(radius: float) =
 let shape: IDrawable = Circle(5.0)
 shape.Draw()
 
+// Определяем тип, представляющий функцию, которая принимает int и возвращает string
+type IntToString = int -> string
+
+// Реализация функции, которая соответствует типу IntToString
+let intToStr: IntToString = fun x -> sprintf "Число: %d" x
+
+// Используем функцию
+let result = intToStr 42
+printfn "%s" result
 
 
 
