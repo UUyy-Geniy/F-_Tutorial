@@ -73,6 +73,21 @@ printMessage()
 printMessage ""
 printMessage 1
 
+// Рекурсия.
+let rec factorial n = if n <= 1 then 1 else n * factorial (n - 1)    
+let result = factorial 5  // Результат будет 120
+
+
+// Замыкания.
+let add x =
+    let inner y = x + y
+    inner
+
+let addFive = add 5
+let result = addFive 3  // Результат будет 8
+
+
+
 
 // Типизация вывода.
 let sum x y : int64 = 
