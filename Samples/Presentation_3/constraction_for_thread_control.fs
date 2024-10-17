@@ -1,3 +1,49 @@
+// Iterators usege example
+
+// C++ Usecase example
+let list = [1; 2; 3; 4; 5]
+
+// Получаем итератор с помощью метода GetEnumerator
+let enumerator = list.GetEnumerator()
+
+// Используем цикл while для явного обхода элементов списка
+while enumerator.MoveNext() do
+    let current = enumerator.Current
+    printfn $"Current item: {current}"
+
+// Пример использования явного управления итератором
+
+open System.Collections
+
+// Итератор для последовательности факториалов
+type FactorialEnumerator() =
+    let mutable n = 1
+    let mutable result = 1
+    interface IEnumerator with
+        member this.Current = result  // Текущий факториал
+        member this.MoveNext() =
+            result <- result * n
+            n <- n + 1
+            true  // Продолжаем вычислять факториалы
+        member this.Reset() =
+            n <- 1
+            result <- 1  // Сбрасываем последовательность
+
+// Определяем последовательность факториалов
+type FactorialSequence() =
+    interface IEnumerable with
+        member this.GetEnumerator() = new FactorialEnumerator() :> IEnumerator
+
+// Пример использования итератора для факториалов
+let factorialSeq = FactorialSequence()
+
+// Используем явное управление итератором
+let factorialEnumerator = (factorialSeq :> IEnumerable).GetEnumerator()
+for _ in 1 .. 10 do  // Получаем первые 10 факториалов
+    factorialEnumerator.MoveNext() |> ignore
+    printfn $"Factorial: {factorialEnumerator.Current}"
+
+
 let numbers = [1; 2; 3; 4; 5]
 
 let res = 
@@ -70,3 +116,6 @@ let totalCost product = product.Price * float product.Quantity
 
 products 
     |> List.iter (fun product -> printfn $"Product: {product.Name}, Total cost: {totalCost product}")
+
+
+
