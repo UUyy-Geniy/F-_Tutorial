@@ -73,6 +73,25 @@ printMessage()
 printMessage ""
 printMessage 1
 
+// Использование списков.
+let sum [a; b; c;] = a + b + c
+let n = sum [1; 2; 3]
+printfn $"n = {n}"
+
+
+type Point = { x : float; y : float }
+
+let (| Polar |) { x = x; y = y} =
+    ( sqrt (x*x + y*y), System.Math.Atan (y/ x) )
+
+let radius (Polar(r, _)) = r
+let angle (Polar(_, theta)) = theta
+
+let p = { x = 3.0; y = 4.0 }
+let r = radius p
+let theta = angle p
+printfn $"r = {r}  theta = {theta}"
+
 // Рекурсия.
 let rec factorial n = if n <= 1 then 1 else n * factorial (n - 1)    
 let result = factorial 5  // Результат будет 120
@@ -86,15 +105,15 @@ let add x =
 let addFive = add 5
 let result = addFive 3  // Результат будет 8
 
-
-
-
 // Типизация вывода.
-let sum x y : int64 = 
-
-    printfn $"x = {x}"
-    printfn $"y = {y}"
+let sum (x: int64) (y: int64) : int64 = 
     x + y
+
+let get_callback (y: int64) : (int64 -> int64) =
+    fun x -> sum x y
  
-let n = sum 600L 300L
-printfn $"n = {n}"  // n = 900
+let callback = get_callback 600L
+
+// Применяем результатирующую функцию с аргументом 900
+let n = callback 900L
+printfn $"n = {n}"  // n = 1500
