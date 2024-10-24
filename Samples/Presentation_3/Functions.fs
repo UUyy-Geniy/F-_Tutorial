@@ -96,6 +96,12 @@ printfn $"r = {r}  theta = {theta}"
 let rec factorial n = if n <= 1 then 1 else n * factorial (n - 1)    
 let result = factorial 5  // Результат будет 120
 
+// Пример с хвостовой рекурсией:
+let rec factorialTailRec n acc =
+    if n = 0 then acc
+    else factorialTailRec (n - 1) (n * acc)
+
+printfn "Factorial of 5 is %d" (factorialTailRec 5 1)
 
 // Замыкания.
 let add x =
@@ -104,6 +110,20 @@ let add x =
 
 let addFive = add 5
 let result = addFive 3  // Результат будет 8
+
+// Пример с замыканием: Счётчик с сохранённым состоянием
+let createCounter () =
+    let mutable count = 0
+    fun () -> 
+        count <- count + 1
+        count
+
+let counter1 = createCounter()
+let counter2 = createCounter()
+
+printfn "Counter 1: %d" (counter1()) // Вывод: Counter 1: 1
+printfn "Counter 1: %d" (counter1()) // Вывод: Counter 1: 2
+printfn "Counter 2: %d" (counter2()) // Вывод: Counter 2: 1
 
 // Типизация вывода.
 let sum (x: int64) (y: int64) : int64 = 
